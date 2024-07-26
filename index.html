@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Themed Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swis721-bt" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swis721-blk-bt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('./swis721-blk-bt/SWISS721BLACKBT.TTF');
+    }
+
+    * {
+        font-family: 'Swis721 BT', sans-serif;
+    }
+
+    body {
+        background-color: #121212;
+    }
+
+    .navbar {
+        background-color: #121212 !important;
+
+    }
+
+    .sidebar {
+        height: 100vh;
+        position: fixed;
+        background-color: #121212 !important;
+
+    }
+
+    .nav-item .nav-link {
+        margin: 10px 0;
+    }
+
+    .nav-link:hover {
+        background-color: #1f1f1f;
+    }
+
+    .card {
+        border: 1px solid #333;
+    }
+
+    .card-title {
+        color: #66ff66;
+    }
+
+    .card-text {
+        color: #cccccc;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #333 !important;
+    }
+
+    .text-white {
+        color: #ffffff !important;
+    }
+
+    .navbar-brand img {
+        margin-right: 10px;
+    }
+
+    .search-input {
+        width: 600px;
+        /* Adjust the width as needed */
+    }
+
+    .bg-dark-dark {
+        background-color: #1e1e1e;
+    }
+
+    .input-group .form-control {
+        border-right: none;
+        background-color: #1e1e1e;
+        color: #7E7F7F;
+
+    }
+
+    .input-group .input-group-text {
+        background-color: #1e1e1e;
+        border-right: none;
+        color: #7E7F7F;
+
+    }
+
+    .nav-link .fas {
+        font-size: 1.2em;
+    }
+
+    .nav-link span {
+        margin-left: 5px;
+    }
+
+    .btn-success {
+        background-color: #66ff66;
+        border: none;
+    }
+
+    .btn-success:hover {
+        background-color: #57e657;
+    }
+
+    .navbar-nav .nav-link .fa-bell {
+        transform: rotate(15deg);
+    }
+
+    .top-nav-border {
+        border-bottom: 2px solid #333;
+        margin-top: -1px;
+    }
+
+    /* New section styles */
+    .new-section {
+        background-color: #1a1a1a;
+        border-radius: 7px;
+    }
+
+    .new-section h3, .new-section button, .text h2{
+        font-family: 'Swis721 Blk BT', sans-serif;
+
+    }
+   
+    .card-body a span{
+        font-family: 'Swis721 Blk BT', sans-serif;
+        font-size: 14px; 
+        line-height: 20px;
+
+    }
+    .new-section p {
+        color: #7E7F7F;
+
+    }
+
+    .new-section .text-left {
+        max-width: 50%;
+    }
+
+    .new-section img {
+        max-width: 50%;
+        border-radius: 10px;
+    }
+
+    .new-section-two-parts {
+        border-radius: 7px;
+    }
+
+    .part h3{
+        font-family: 'Swis721 Blk BT', sans-serif;
+
+    }
+
+    .new-section-two-parts img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+
+    }
+
+    .fw-bolder,
+    .customFont {
+        font-family: 'CustomFont', sans-serif;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #4A4A4A;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo.png" alt="Logo" class="d-inline-block align-top">
+                </a>
+                <!-- Search Input -->
+                <form class="d-flex ms-auto me-auto" role="search">
+                    <div class="input-group search-input">
+                        <span class="input-group-text bg-dark-dark border-0"><i class="fas fa-search"></i></span>
+                        <input class="form-control bg-dark-dark border-0" type="search"
+                            value="search tournament, players name or player tag" aria-label="Search">
+                    </div>
+                </form>
+                <!-- Icons and User Info -->
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link text-white" href="#"><i class="fas fa-bell"
+                            style="background-color: #232222; padding: .5rem; border-radius: 50%;"></i></a>
+                    <a class="nav-link text-white mt-2" href="#"><img src="base.png" alt=""> 20, 0000</a>
+                    <div class="d-flex"></div>
+                    <div class="navbar-nav ms-auto d-flex align-items-center">
+                        <a class="nav-link text-white d-flex align-items-center" href="#">
+                            <i class="fas fa-user"
+                                style="background-color: #232222; padding: 1rem; border-radius: 50%;"></i>
+                        </a>
+                        <div>
+                            <p class="text-white ms-2">Akinola Olalekan</p>
+                                <button class="btn btn-sm ms-2 d-flex align-items-center text-white rounded-0"
+                                    style="background-color: #40610F; margin-top: -12px;">
+                                    Online <i class="fas fa-chevron-down ms-1"></i>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="top-nav-border"></div>
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="position-sticky d-flex flex-column h-100 my-3">
+                    <ul class="nav flex-column py-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="#">
+                                <img src="Vector2.png" alt="">
+                                Tournaments
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <img src="Leaderboard.png" alt="">
+                                Leaderboards
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <img src="Token.png" alt="">
+                                Token shop
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <img src="betting.png" alt="">
+                                Live betting
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <img src="Video.png" alt="">
+                                Content locker
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <img src="Vector.png" alt="">
+                                Community
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-auto">
+                        <button class="btn w-100 d-flex align-items-center justify-content-center py-3 text"
+                            style="background-color: #5F0A07;color: #E5E4E4; font-size: 12px;">
+                            <i class="fas fa-sign-out-alt me-2"></i> LOG-OUT
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+                <section class="new-section d-flex align-items-between p-5 mt-5">
+                    <div class="text-left mt-3">
+                        <h3 class="text-white fw-bolder"
+                            style="font-weight: bolder; font-size: 24px; line-height: 32px;">Setup your profile</h3>
+                        <p style="color: #7E7F7F; font-size: 14px; line-height: 20px;">Complete your information to get
+                            access to tournaments and other
+                            premium features.</p>
+                        <button class="btn rounded-0 btn-lg fw-bolder" style="background-color: #8BC72F; font-size: 14px; line-height: 20px;"><i
+                                class="fas fa-user me-2"></i>Complete Profile</button>
+                    </div>
+                    <div class="ms-auto mt-4">
+                        <img src="VALORANT Fan Art, Rui-Rou Teo 1.png" alt="Dashboard Image" width="280px"
+                            class="img-fluid">
+                    </div>
+                </section>
+                <section class="new-section-two-parts d-flex mt-4">
+                    <div class="col-md-6 part d-flex p-4 justify-content-between"
+                        style="background-color: #1C1C1C; border-radius: 7px;">
+                        <div class="">
+                            <h3 class="text-white fw-bolder"
+                                style="font-weight: bolder; font-size: 24px; line-height: 32px;">Continue playing</h3>
+                            <p style="color: #7E7F7F;">Start or esume tournaments you <br />have registered for</p>
+                            <p class="text-white fw-bolder"><span><img src="play.png" alt=""> </span>Continue playing
+                            </p>
+                        </div>
+                        <img src="VALORANT Fan Art, Rui-Rou Teo 1.png" alt="Part 1 Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 part parts d-flex justify-content-between p-4 ms-3"
+                        style="background-color: #1C1C1C; border-radius: 7px;">
+                        <div>
+                            <h3 class="text-white fw-bolder" style="font-size: 24px; line-height: 32px;">Quick match
+                            </h3>
+                            <p style="color: #7E7F7F;">Create a tournament and invite <br />friends to play</p>
+                            <p class="text-white fw-bolder"><span><img src="play.png" alt=""> </span>Let's go</p>
+                        </div>
+                        <img src="VALORANT Fan Art, Rui-Rou Teo 1.png" alt="Part 2 Image" class="img-fluid">
+                    </div>
+                </section>
+                <div class="row mb-4 my-4">
+                    <div class="tournaments d-flex justify-content-between mb-3">
+                        <div class="text">
+                            <h2 class="text-white fw-bolder" style=" font-size: 24px; line-height: 32px;">Tournaments
+                            </h2>
+                        </div>
+                        <div class="content d-flex">
+                            <div class="" style="color: #E5E4E4; background-color: #1C1C1C; padding: .75rem 1.25rem;">
+                                <span> <img src="up-down.png" alt=""></span>Sort by <i
+                                    class="fas fa-chevron-down ms-1"></i>
+                            </div>
+                            <div class="ms-3"
+                                style="color: #E5E4E4; background-color: #1C1C1C; padding: .75rem 1.25rem;"> <span> <img
+                                        src="Filter.png" alt=""></span>Filter <i class="fas fa-chevron-down ms-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="border-color: #4A4A4A;">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img src="image 1.png" class="card-img-top" alt="Card Image">
+                            <div class="card-body">
+                                <h4 class="customFont" style="font-size: 18px; font-weight: 400;">Call of duty</h4>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">10
+                                            Feb 2023</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2" style="color: #7E7F7F;">Free
+                                            to play</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">4v4</span>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <img src="calendar.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">10/48</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6 d-flex align-items-center p-1 ms-2"
+                                        style="border-radius: 15px; background-color: #343434; width: 110px;">
+                                        <img src="Trophy - Icon.png" alt=""> <span class="ms-2"
+                                            style="color: #7E7F7F;">N10,000</span>
+                                    </div>
+                                </div>
+                                <a href="tournaments.html"
+                                    class="btn btn-success w-100 mb-2 d-flex align-items-center justify-content-center py-3 rounded-0"
+                                    style="background-color: #8BC72F;">
+                                    <img src="blackpes.png" alt=""> <span class="ms-2 text-dark fw-bold"> Join
+                                        tournament </span>
+                                </a>
+                                <a href="fixtures.html"
+                                    class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center py-3 rounded-0">
+                                    <img src="Vector2.png" alt=""><span class="ms-2 fw-bold"> View details </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
